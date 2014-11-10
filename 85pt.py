@@ -10,8 +10,6 @@
 
 from Tkinter import *
 root = Tk()
-# Create our drawpad and oval - use variables for our width and height so
-# we can access them later on
 drawpadwidth = 480
 drawpadheight = 320
 drawpad = Canvas(root, width=drawpadwidth, height=drawpadheight, background='white')
@@ -22,7 +20,6 @@ y2 = 320
 oval = drawpad.create_oval(x1,x2,y1,y2, fill="red")
 class MyApp:
 	def __init__(self, parent):
-	        # Make sure the drawpad is accessible from inside the function
 	        global drawpad
 		self.myParent = parent  
 		self.myContainer1 = Frame(parent)
@@ -41,16 +38,13 @@ class MyApp:
 		drawpad.pack()
 			
 	def button1Click(self, event):   
-		# Make the oval move to the left!
-                # "global" makes sure that we can access our oval and our drawpad
-                # Add in boundary detection
 		global oval
 		global drawpad
 		global drawpadwidth
 		global drawpadheight
 	        drawpad.move(oval,-50,0)
-	        if (x1>drawpadwidth and x2<drawpadwidth) and (y1>drawpadheight and y2<drawpadheight):
-	           drawpad.move(oval,0,0)    
+	        #if :
+	           #drawpad.move(oval,0,0)    
 	
 	def button2Click(self, event):   
 		global oval
@@ -58,8 +52,8 @@ class MyApp:
 		global drawpadwidth
 		global drawpadheight
 		drawpad.move(oval,50,0)	
-		if (x1>drawpadwidth and x2<drawpadwidth) and (y1>drawpadheight and y2<drawpadheight):
-	           drawpad.move(oval,0,0)
+		#if :
+	           #drawpad.move(oval,0,0)
 	       
 myapp = MyApp(root)
 
